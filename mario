@@ -1,0 +1,8 @@
+Employee{employeeId='10', name='Dana Wyatt', hoursWorked='52.5', GrossPay='656.25'}
+Employee{employeeId='20', name='Ezra Aiden', hoursWorked='17', GrossPay='284.75'}
+Employee{employeeId='30', name='Brittany Thibbs', hoursWorked='40', GrossPay='660.0'}
+Employee{employeeId='40', name='Zephaniah Hughes', hoursWorked='2', GrossPay='20.0'}
+Employee{employeeId='50', name='Caylee Callahan', hoursWorked='35', GrossPay='542.5'}
+Employee{employeeId='60', name='Zane Stephens', hoursWorked='45', GrossPay='607.5'}
+Employee{employeeId='70', name='Maverick Cummings', hoursWorked='25.5', GrossPay='420.75'}
+Employee{employeeId='80', name='Kamari Todd', hoursWorked='32', GrossPay='464.0'}

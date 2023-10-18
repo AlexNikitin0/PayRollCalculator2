@@ -1,17 +1,20 @@
 package com.pluralsight;
 import java.io.*;
 import java.util.Scanner;
+import java.util.Scanner;
 public class PayrollCalculator {
 
     public static void main(String[] args) {
+        int choice = 0;
     try {
+        Scanner keyboard = new Scanner(System.in);
         //create a Filereader object and connect to file
         FileReader fileReader = new FileReader("src/main/resources/employees.csv");
         //create bufferedreader to manage input stream
         BufferedReader bufReader = new BufferedReader(fileReader);
         String input;
         int counter = 0;
-        Employee[] employees = new Employee[9];
+        Employee[] employees = new Employee[8];
         //read and display text file for now
         while((input = bufReader.readLine()) != null){
 
@@ -25,12 +28,52 @@ public class PayrollCalculator {
                 double hoursD = Double.parseDouble(hours);
                 double payRateD = Double.parseDouble(payRate);
 
-                System.out.printf("Employee ID: %s,Name: %s, GrossPay: $%.2f%n",employees[counter].getEmployeeId(),employees[counter].getName(),employees[counter].getGrossPay(hoursD,payRateD));
+              //  System.out.printf("Employee ID: %s,Name: %s, GrossPay: $%.2f%n",employees[counter].getEmployeeId(),employees[counter].getName(),employees[counter].getGrossPay(hoursD,payRateD));
             counter++;
 
 
-        }
+
+        }//end while
             //test output
+
+        String userInput = "";
+        String userInput2 = "";
+        //get user input
+        System.out.println("Enter the name of the file to be created: ");
+        userInput = keyboard.nextLine();
+        System.out.println("Jason(1) or CSV(2)?:");
+        choice = keyboard.nextInt();
+        //create new file writer and get it to write to a file
+
+        try{
+            //filewriter code here
+            FileWriter fileWriter = new FileWriter(userInput);
+            //create bufferedwriter
+            BufferedWriter bufWriter = new BufferedWriter(fileWriter);
+if(choice == 1) {
+    //write to the file
+    for (int i = 0; i < employees.length; i++) {
+
+        bufWriter.write(employees[i].toString());
+    }
+
+    bufWriter.close();
+}
+else if(choice == 2){
+    for (int i = 0; i < employees.length; i++) {
+
+        bufWriter.write(employees[i].toString2());
+    }
+
+    bufWriter.close();
+
+}
+        }
+        catch (IOException e) {
+            System.out.println("ERROR: An unexpected error occurred");
+            e.getStackTrace();
+
+        }
 
 
 

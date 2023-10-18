@@ -50,12 +50,30 @@ public class Employee {
 
     //custom methods
 
-    public double getGrossPay(double hoursWorked, double payRate){
-        return hoursWorked * payRate;
+    public double getGrossPay(){
+        return Double.parseDouble(this.hoursWorked)  * Double.parseDouble(this.payRate);
     }
 
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeId='" + employeeId + '\'' +
+                ", name='" + name + '\'' +
+                ", hoursWorked='" + hoursWorked + '\'' +
+                ", GrossPay='" + this.getGrossPay() + '\'' +
+                "}\n";
+    }
+
+    public String toString2(){
+        return  "id|name|gross pay|" + "\n" +
+                this.getEmployeeId() + "|" + name + "|" + + this.getGrossPay() +"\n";
+
+    }
+
 }
+
+
 
 
 
